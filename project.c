@@ -11,8 +11,8 @@ void make(){
 	scanf("%s",ID_pass[1]);
 }
 
-void withdraw(){
-	printf("Your account had been withdrawn");
+void deleted(){
+	printf("Your account had been deleted");
 	for(int k = 0; k<2 ; k++){
 		for(int i = 0; i<9; i++){
 			ID_pass[k][i] = NULL;
@@ -66,9 +66,26 @@ int login (){
 			printf("Wrong Password Type...");
 		}
 	}
+}
 //not finished
-
-
+void account_check(){//account checking func
+	if(check()==1){
+		printf("ID:%s you have %d in your account.\n",ID_pass[0],account);
+	}
+}
+void deposit(){//in
+	int num;
+	if(check()=1){
+		printf("How much you want to deposit?");
+		scanf("%d",&num); // scan address of num
+		if(num!=-1){
+			account+=num;
+			printf("ID:%s you have %d in your account.\n",ID_pass[0],account);
+		}
+	}
+}
+void witdraw(){//out
+}
 
 
 
