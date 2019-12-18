@@ -85,7 +85,24 @@ void deposit(){//in
 	}
 }
 void witdraw(){//out
+	int num;
+	if(check()==1){
+		printf("How much you want to withdraw?");
+		scanf("%d",&num);
+		if(num != -1){
+			if(num > account){
+				printf("You don't have enough balance");
+			}
+			else{
+				account -= num;
+				printf("ID:%s you have %d in your account.\n",ID_pass[0].account);
+			}
+		}
+	}
 }
+				
+
+			
 
 
 
