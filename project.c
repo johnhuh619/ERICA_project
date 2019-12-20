@@ -100,8 +100,34 @@ void witdraw(){//out
 		}
 	}
 }
-				
 
+void menu(){
+	while(1){
+		int ans; // 1 ~ 4 to select menu
+		printf(" (Select command ...)\n");
+		printf(" (1) Account check \n");
+		printf(" (2) Deposit \n");
+		printf(" (3) Withdraw \n");
+		printf(" (4) Quit \n");
+		printf("Select menu: ");
+		scanf("%d",&ans);
+		
+		if(ans==1)
+			account_check();
+		else if(ans==2)
+			deposit();
+		else if(ans==3)
+			withdraw();
+		else if(ans==4)
+			break;// should be changed
+		else
+			printf("try again.\n)");
+	}
+}
+
+void main(){
+	menu();
+}
 			
 
 
