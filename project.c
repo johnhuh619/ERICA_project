@@ -75,6 +75,7 @@ void account_check(){//account checking func
 	}
 }
 void deposit(){//in
+	login();
 	int num;
 	if(login()==1){
 		printf("How much you want to deposit?");
@@ -86,6 +87,7 @@ void deposit(){//in
 	}
 }
 void withdraw(){//out
+	login();
 	int num;
 	if(login()==1){
 		printf("How much you want to withdraw?");
