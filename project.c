@@ -69,13 +69,14 @@ int login (){
 }
 //not finished
 void account_check(){//account checking func
-	if(check()==1){
+	login();
+	if(login()==1){
 		printf("ID:%s you have %d in your account.\n",ID_pass[0],account);
 	}
 }
 void deposit(){//in
 	int num;
-	if(check()=1){
+	if(login()==1){
 		printf("How much you want to deposit?");
 		scanf("%d",&num); // scan address of num
 		if(num!=-1){
@@ -86,7 +87,7 @@ void deposit(){//in
 }
 void withdraw(){//out
 	int num;
-	if(check()==1){
+	if(login()==1){
 		printf("How much you want to withdraw?");
 		scanf("%d",&num);
 		if(num != -1){
