@@ -45,7 +45,7 @@ int login (){
 	if(check(id)){ // exception handling
 		char passwd[256];
 		printf("Whats youre Password?: ");
-		scnaf("%s",passwd);
+		scanf("%s",passwd);
 		printf("\n");
 
 		if(check(passwd)){ // exception handling
@@ -84,7 +84,7 @@ void deposit(){//in
 		}
 	}
 }
-void witdraw(){//out
+void withdraw(){//out
 	int num;
 	if(check()==1){
 		printf("How much you want to withdraw?");
