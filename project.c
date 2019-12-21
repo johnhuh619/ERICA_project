@@ -95,7 +95,7 @@ void withdraw(){//out
 			}
 			else{
 				account -= num;
-				printf("ID:%s you have %d in your account.\n",ID_pass[0].account);
+				printf("ID:%s you have %d in your account.\n",ID_pass[0],account);
 			}
 		}
 	}
