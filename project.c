@@ -108,7 +108,9 @@ void menu(){
 		printf(" (1) Account check \n");
 		printf(" (2) Deposit \n");
 		printf(" (3) Withdraw \n");
-		printf(" (4) Quit \n");
+		printf(" (4) Make Account \n");
+		printf(" (5) Delete Account \n");
+		printf(" (6) QUit \n");
 		printf("Select menu: ");
 		scanf("%d",&ans);
 		
@@ -119,7 +121,11 @@ void menu(){
 		else if(ans==3)
 			withdraw();
 		else if(ans==4)
-			break;// should be changed
+			make();
+		else if(ans==5)
+			deleted();
+		else if(ans==6)
+			break; // fix plz
 		else
 			printf("try again.\n)");
 	}
