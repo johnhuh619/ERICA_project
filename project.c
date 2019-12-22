@@ -7,8 +7,10 @@ int account = 0; //account data
 void make(){
 	printf("Your ID: ");
 	scanf("%s",ID_pass[0]);
+	printf("ID: %s",ID_pass[0]);
 	printf("\nYour Passwowrd: ");
 	scanf("%s",ID_pass[1]);
+	printf("Password: %s",ID_pass[1]);
 }
 
 void deleted(){
@@ -18,12 +20,13 @@ void deleted(){
 			ID_pass[k][i] = NULL;
 		}
 	}
+	account = 0;
 }
 
 void menu();
 
 int check(char id_passwd[]){  //ID and Password checking func
-	if(((int)'a'<=(int)id_passwd[0] && (int)id_psswd[0] <= (int)'z') || ((int)'A' <= (int)id_passwd[0] && (int)id_passwd[0] <= 'Z')){
+	if(((int)'a'<=(int)id_passwd[0] && (int)id_passwd[0] <= (int)'z') || ((int)'A' <= (int)id_passwd[0] && (int)id_passwd[0] <= 'Z') || ((int)id_passwd[0]>= '0' && (int)id_passwd[0]<='9')){
 		return 1; // if correct return 1 (t)
 	}
 	else
@@ -31,36 +34,40 @@ int check(char id_passwd[]){  //ID and Password checking func
 } // must be fixxed..(fixed once)
 
 int compare( char id_passwd[], int i){ // Id & psswd compare. to check
-	if(strcmp(id_passwd, ID_pass[i])==0) // using string compare
+	if(strcmp(id_passwd, ID_pass[i])==0){// using string compare
+		printf("string is same\n");
 		return 1;
+	}
 	else 
 		return 0;
 }
 
 int login (){
 	char id[256]; // id
+	char passwd[256];
 	printf("Whats youre ID?: ");
 	scanf("%s",id);
 	printf("\n");
 	if(check(id)){ // exception handling
-		char passwd[256];
 		printf("Whats youre Password?: ");
 		scanf("%s",passwd);
 		printf("\n");
 
 		if(check(passwd)){ // exception handling
-
-			if(compare(id,0));
+			printf("loop in\n");
+			if(compare(id,0)){
+				if(compare(passwd,1)){
+						return 1;
+				}
+				else{
+					printf("Password is incorrect.\n");
+					return 0;
+					}
+				}
 			else{
 				printf("ID is incorrect.\n");
 				return 0;
-			}
-			if(compare(passwd,1)){
-				return 1;
-			}
-			else{
-				printf("Password is incorrect.\n");
-			}
+				}
 		}
 		else{
 			printf("Wrong Password Type...");
@@ -69,13 +76,11 @@ int login (){
 }
 //not finished
 void account_check(){//account checking func
-	login();
 	if(login()==1){
 		printf("ID:%s you have %d in your account.\n",ID_pass[0],account);
 	}
 }
 void deposit(){//in
-	login();
 	int num;
 	if(login()==1){
 		printf("How much you want to deposit?");
@@ -87,7 +92,6 @@ void deposit(){//in
 	}
 }
 void withdraw(){//out
-	login();
 	int num;
 	if(login()==1){
 		printf("How much you want to withdraw?");
